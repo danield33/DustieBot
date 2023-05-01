@@ -1,0 +1,104 @@
+<%
+let icon;
+if(guild.icon) {
+  icon = `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
+} else {
+  icon = "https://www.richardwilliams.co.uk/img/no-image.png";
+}
+
+if(module.mod.toggle == true || module.mod.toggle == 'true') {
+    modNav = "activated"
+  } else {
+    modNav = "disabled"
+  }
+  if(module.welcome.toggle ==true  || module.welcome.toggle == 'true') {
+    welcomeNav = "activated"
+  } else {
+    welcomeNav = "disabled"
+  }
+  if(module.logs.toggle == true  || module.logs.toggle == 'true') {
+    logginNav = "activated"
+  } else {
+    logginNav = "disabled"
+  }
+  if(module.fun.toggle == true  || module.fun.toggle == 'true') {
+    funNav = "activated"
+  } else {
+    funNav = "disabled"
+  }
+%>
+
+
+
+<nav id="sidebar">
+    <ul class="list-unstyled components">
+        <img src="<%=icon%>" alt="<%= guild.name %> Logo">
+        <p style="display:inline-block;"><%=guild.name%></p>
+        <hr>
+        <p>Settings</p>
+        <% if(page == "main") { %>
+            <li class="active">
+                <a href="/dashboard/<%=guild.id %>"><i class="fas fa-home fa-2x"></i> Bot Settings</a>
+            </li>
+        <% } else { %>
+            <li>
+                <a href="/dashboard/<%=guild.id %>"><i class="fas fa-home fa-2x"></i> Bot Settings</a>
+            </li>
+        <% } %>
+        <% if(page == "modules") { %>
+            <li class="active">
+                <a href="/dashboard/<%=guild.id %>/modules"><i class="fa fa-cubes fa-2x"></i> Modules</a>
+            </li>
+        <% } else { %>
+            <li>
+                <a href="/dashboard/<%=guild.id %>/modules"><i class="fa fa-cubes fa-2x"></i> Modules</a>
+            </li>
+        <% } %>
+        <!-- <% if(page == "stats") { %>
+            <li class="active">
+                <a href="/dashboard/<%=guild.id %>/stats"><i class="far fa-chart-bar fa-2x"></i> Server Stats</a>
+            </li>
+        <% } else { %>
+            <li>
+                <a href="/dashboard/<%=guild.id %>/stats"><i class="far fa-chart-bar fa-2x"></i> Server Stats</a>
+            </li>
+        <% } %> -->
+        <p>Modules</p>
+        <% if(page == "mod") { %>
+            <li id="modNav" class="active <%=modNav%>">
+                <a href="/dashboard/<%=guild.id %>/moderation"><i class="fas fa-exclamation fa-2x"></i> Moderation</a>
+            </li>
+        <% } else { %>
+            <li id="modNav" class="<%=modNav%>">
+                <a href="/dashboard/<%=guild.id %>/moderation"><i class="fas fa-exclamation fa-2x"></i> Moderation</a>
+            </li>
+        <% } %>
+        <% if(page == "logs") { %>
+            <li id="logNav" class="active <%=logginNav%>">
+                <a href="/dashboard/<%=guild.id %>/logging"><i class="fas fa-bell fa-2x"></i> Logging</a>
+            </li>
+        <% } else { %>
+            <li id="logNav" class="<%=logginNav%>">
+                <a href="/dashboard/<%=guild.id %>/logging"><i class="fas fa-bell fa-2x"></i> Logging</a>
+            </li>
+        <% } %>
+        <% if(page == "welcome") { %>
+            <li id="welcomeNav" class="active <%=welcomeNav%>">
+                <a href="/dashboard/<%=guild.id %>/welcome"><i class="fas fa-handshake fa-2x"></i> Welcome</a>
+            </li>
+        <% } else { %>
+            <li id="welcomeNav" class="<%=welcomeNav%>">
+                <a href="/dashboard/<%=guild.id %>/welcome"><i class="fas fa-handshake fa-2x"></i> Welcome</a>
+            </li>
+        <% } %>
+        <% if(page == "fun") { %>
+            <li id="funNav" class="active <%=funNav%>">
+                <a href="/dashboard/<%=guild.id %>/fun"><i class="fas fa-laugh-squint fa-2x"></i> Fun</a>
+            </li>
+        <% } else { %>
+            <li id="funNav" class="<%=funNav%>">
+                <a href="/dashboard/<%=guild.id %>/fun"><i class="fas fa-laugh-squint fa-2x"></i> Fun</a>
+            </li>
+        <% } %>
+    </ul>
+</nav>

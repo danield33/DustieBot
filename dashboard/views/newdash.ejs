@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <%- include("parts/head") %>
+        <title>Dustie - Dashboard</title>
+    </head>
+
+    <body>
+            <%- include("parts/navbar") %>
+        <div class="wrapper">
+                <%- include("parts/sidenav", {page: "main"}) %>
+    
+            <div id="content">
+
+                <div class="overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div  class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-robot"></i> Bot Settings
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group mb-4">
+                                            <label for="username">Nickname</label>
+                                            <input class="input" onchange="newChanges(this, 'Nickname has been updated!')" name="username" id="username"  type="text" maxlength="32"  placeholder="<%= data.nickname %>">
+                                        </div>
+                                        <div class="input-group mb-4">
+                                            <label for="prefix">Prefix</label>
+                                            <input class="input" onchange="newChanges(this, 'Prefix has been changed!')" name="prefix" id="prefix" type="text" maxlength="5" placeholder="<%= data.prefix %>">
+                                        </div>
+                                        <div class="input-group mb-2">
+                                            <label class="checkcontainer">Delete User's Message
+                                                <% if(data.userm) { %>
+                                                    <input checked type="checkbox" onchange="newChanges(this, 'Delete User Message has been changed!')" name="delete-userm">
+                                                <% } else { %>
+                                                    <input type="checkbox" onchange="newChanges(this, 'Delete User Message has been ')" name="delete-userm">
+                                                <% } %>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <!-- <div class="input-group mb-4">
+                                                <label for="username">Nickname</label>
+                                                <input class="input"  name="username" id="username"  type="text" maxlength="32"  placeholder="Nickname Placeholder">
+                                            </div>
+                                            <div class="input-group mb-4">
+                                                <label for="prefix">Prefix</label>
+                                                <input class="input"  name="prefix" id="prefix" type="text" maxlength="5" placeholder="Prefix Placeholder">
+                                            </div>
+                                            <div class="input-group mb-2">
+                                                <label class="checkcontainer">Delete User's Message
+                                                    <input type="checkbox"  name="delete-userm">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div  class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-plus"></i> Add Server Owner
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="input-group mb-3 addowner">
+                                            <form action="/dashboard" method="POST" style="width: 100%;">
+                                                <label for="ownerid">Add Owner</label>
+                                                <input id="ownerid"  type="text" name="newOwner" class="input" placeholder="ex. 123456789123456789">
+                                                <button id="newOwner" class="btn btn-success" type="button"><i class="fas fa-plus"></i></button>
+                                            </form>
+                                        </div>    
+                                    </div>
+                                </div>
+
+                                <div  class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-crown"></i> Server Owners 
+                                    </div>
+                                    <div class="card-body">
+                                          <ul class="owner-list">
+                                                <% owners.forEach(owner => { %>
+                                                        <li>
+                                                            <input style="border-bottom:none;width: 80%;" name="owner" type="text" value="<%= owner %>" readonly>
+                                                            <button id="removeRole" type="button" class="btn btn-delete" ><span aria-hidden="true">&times;</span></button>
+                                                        </li>
+                                                <% }) %>
+                                          </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="col">
+                                <div  class="card">
+                                    <div class="card-header">
+                                        Server Owners (testing with roles)
+                                    </div>
+                                    <div class="card-body">
+            
+                                        <div class="input-group mb-3">
+                                            <div class="input-group mb-3">
+                                                <label for="ownerid">Add Role</label>
+                                                <div class="input" style="width: 150%;">
+                                                    <input type='text'
+                                                        placeholder='Role'
+                                                        class='flexdatalist'
+                                                        data-min-length='0'
+                                                        multiple='multiple'
+                                                        list='languages'
+                                                        name='language12'
+                                                        oninput="newChanges()">
+
+                                                    <datalist id="languages">
+                                                        <option value="Owner1">Owner1</option>
+                                                        <option value="Owner2">Owner2</option>
+                                                        <option value="Owner3">Owner3</option>
+                                                        <option value="Owner4">Owner4</option>
+                                                        <option value="Owner5">Owner5</option>
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <button class="save-button hidden" type="button"><i class="far fa-save"></i></button> -->
+
+                <%- include("parts/footer") %>
+
+            </div>
+
+            <div class="save-msg error hidden">
+                <span><%= messages.error %></span>
+            </div>
+            <div class="save-msg success hidden">
+                <span><%= messages.success %></span>
+            </div>
+
+        </div>
+    </body>
+
+    <%- include("parts/js") %>
+
+</html>
+

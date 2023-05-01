@@ -1,0 +1,100 @@
+
+
+<html>
+        <head>
+            <%- include("parts/head") %>
+            <title>Dustie Bot - Dashboard</title>
+        </head>
+        
+        
+        
+        <body class="bg-discord">
+    
+
+            <%
+            if(module.mod.toggle == true || module.mod.toggle == 'true') {
+              mod = "actived"
+            } else {
+              mod = "deactived"
+            }
+            if(module.welcome.toggle ==true  || module.welcome.toggle == 'true') {
+              welcome = "actived"
+            } else {
+              welcome = "deactived"
+            }
+      
+            if(module.logs.toggle == true  || module.logs.toggle == 'true') {
+              logs = "actived"
+            } else {
+              logs = "deactived"
+            }
+            if(module.fun.toggle == true  || module.fun.toggle == 'true') {
+              fun = "actived"
+            } else {
+              fun = "deactived"
+            }
+      
+          %>
+        
+    
+            <%- include("parts/navbar") %>
+    
+            <div class="wrapper">
+                <%- include("parts/sidenav", {page:"modules"}) %>
+        
+                <div id="content">
+                    <div class="overlay" style="height: 160%;">
+                        <div class="container">
+                            <div class="row" style="padding-top: 50px;">
+                                <div class="col">
+                                    <div id="moderation" class="minPane <%= mod %>">
+                                        <h5 class="module-title">Moderation</h5>
+                                        <p class="module-desc">Description Here!</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col">
+                                    <div id="logs" class="minPane <%= logs %>">
+                                        <h5 class="module-title">Logs</h5>
+                                        <p class="module-desc">Description Here!</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="welcome" class="minPane <%= welcome %>">
+                                        <h5 class="module-title">Welcome Messages</h5>
+                                        <p class="module-desc">Description Here!</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div id="fun" class="minPane <%= fun %>">
+                                        <h5 class="module-title">Fun</h5>
+                                        <p class="module-desc">Description Here!</p>
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="save-msg error hidden">
+                        <span></span>
+                    </div>
+                    <div class="save-msg success hidden">
+                        <span></span>
+                    </div>
+    
+                    <%- include("parts/footer") %>
+    
+                </div>
+    
+            </div>
+        
+        
+            <%- include('parts/js') %>
+        
+        </body>
+        
+    </html>
+        

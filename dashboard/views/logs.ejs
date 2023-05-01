@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+        <head>
+            <%- include("parts/head") %>
+            <title>Dustie - Dashboard</title>
+            <link rel="stylesheet" href="/switcher.css">
+            <link rel="stylesheet" href="/modal.css">
+        </head>
+
+
+
+  <body>
+
+      <%- include("parts/navbar") %>
+
+
+    <!-- Page it self -->
+
+    <div class="wrapper">
+        <%- include("parts/sidenav", {page:"logs"}) %>
+
+        <div id="content">
+            <div class="overlay">
+            
+        
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-hashtag"></i> Log Channel
+                                </div>
+                                <div class="card-body">
+    
+                                    <p>Server Logging will be posted in this channel.</p>
+
+                                    <div class= "input-group mb-3 select">
+                                        <input class="list" list="logchannels" id="logchannel" name="logchannel" placeholder="<%= channel || 'Select a channel' %>"/>
+                                        <datalist id="logchannels">
+                                            <% guild.channels.forEach(channel => {
+                                                if(channel.type == "text") { %>
+                                                    <option value="<%= channel.name %>"> 
+                                                <% }
+                                            }) %>
+                                        </datalist>
+                                    </div>
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-50"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="save-msg error hidden">
+                <span></span>
+            </div>
+            <div class="save-msg success hidden">
+                <span></span>
+            </div>
+
+            <%-include("parts/footer") %>
+        </div>
+    </div>
+
+
+
+    <%- include("parts/js") %>
+    <script src="/logging.js"></script>
+
+
+  </body>
+
+</html>

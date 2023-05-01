@@ -1,0 +1,50 @@
+<nav class="mb-0 navbar navbar-expand-lg navbar-dark bg-transparant">
+    <a class="navbar-brand" href="/">Dustie</a>
+    <button class="navbar-toggler mr-auto" type="button" id="sidebarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/commands">Commands</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://docs.dustie.xyz/">Documentation</a>
+            </li>
+            <li class="nav-item dropdown">
+                <!-- <a class="nav-link dropdown-toggle" id="supportDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-hands-helping"></i> Support </a> -->
+                <a class="nav-link dropdown-toggle" id="supportDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support</a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="supportDropdown">
+                    <!-- <a class="dropdown-item" href="/faq"><i class="fas fa-question"></i> FAQ</a> -->
+                    <a class="dropdown-item" href="/faq">FAQ</a>
+                    <!-- <a class="dropdown-item" href="https://form.jotformeu.com/90551091113345"><i class="fas fa-phone"></i> Contact</a> -->
+                    <a class="dropdown-item" href="https://form.jotformeu.com/90551091113345">Contact</a>
+                    <!-- <a class="dropdown-item" href="/discord"><i class="fab fa-discord"></i> Discord Server</a> -->
+                    <a class="dropdown-item" href="/discord">Discord Server</a>
+                </div>
+            </li>
+            <% if(user) { %>
+                <li class="nav-item dropdown">
+                    <!-- <a class="nav-link dropdown-toggle" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Account </a> -->
+                    <a class="nav-link dropdown-toggle" id="accountDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span><img class="nav-user-img" src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%= user.avatar %>.png?size=256" alt=""></span> <%= user.username %> </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="accountDropdown">
+                        <!-- <a class="dropdown-item" href="/dashboard"><i class="fas fa-cog"></i> Dashboard</a> -->
+                        <a class="dropdown-item" href="/dashboard">Servers</a>
+                        <a class="dropdown-item" href="/logout" style="color:rgb(216, 43, 43) !important;"><i style="color:rgb(216, 43, 43) !important;" class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a> -->
+                    <a class="nav-link nav-button" href="/login">Login</a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

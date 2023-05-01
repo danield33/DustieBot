@@ -1,0 +1,145 @@
+
+
+<html>
+  <head>
+    <%- include("parts/head") %>
+    <title>Dustie Bot - Dashboard</title>
+  </head>
+
+
+
+  <body class="bg-discord">
+
+    <!-- Navbar -->
+    <%- include("parts/navbar") %>
+
+    <!-- Flash Messages -->
+    <% if(messages.success) { %>
+      <div class="save-msg success">
+          <span><%= messages.success %></span>
+      </div>
+  <% } %>
+  <% if(messages.error) { %>
+      <div class="save-msg error">
+          <span><%= messages.error %></span>
+      </div>
+  <% } %>
+
+  <%
+    noInvite= [],
+    needInvite= []
+    user.guilds.forEach(async function(server) {
+      const permsOnGuild = new perms(server.permissions);
+      if(!permsOnGuild.has("MANAGE_GUILD")) return;
+      if(bot.guilds.get(server.id)) {
+        <!-- server.isPremium = await settings.get(server.id, "settings.botPremium") -->
+        noInvite.push(server)
+      } else {
+        needInvite.push(server)
+      }
+    });
+  %>
+
+
+    <div class="content">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div  class="card">
+                <div class="card-header">
+                    <i class="fas fa-server"></i> Choose Server
+                </div>
+                <div class="card-body">
+                    <!-- <div class="loader"></div> -->
+                    <div id="ChooseList" class="container">
+                      <div class=row>
+
+                        <%noInvite.forEach(server => { 
+                          let icon;
+                          let premium;
+                          if(server.icon) {
+                            icon = `https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png`
+                          } else {
+                            icon = "https://www.richardwilliams.co.uk/img/no-image.png";
+                          }
+                        %>
+                          <a href="/dashboard/<%=server.id%>" style="width: 100%;">
+                              <div class="col server">
+                                <div class="server-img"> 
+                                    <img src="<%= icon %>" alt="<%= server.name %> Logo">
+                                  </div>
+                                  <div class="server-name">
+                                      <%= server.name %>
+                                  </div>
+                              </div>
+                            </a>
+
+                        <% }) %>
+                      </div>
+                    </div>   
+                    
+                </div>
+              </div>
+
+              
+            </div>
+            <div class="col">
+
+                <div  class="card">
+                    <div class="card-header">
+                        <i class="fas fa-server"></i> Invite to Server
+                    </div>
+                    <div class="card-body">
+                        <div class="container serverlist">
+                          <div class=row>
+                              <% needInvite.forEach(server => { 
+                                  let icon;
+                                  let premium;
+                                  if(server.icon) {
+                                    icon = `https://cdn.discordapp.com/icons/${server.id}/${server.icon}.png`
+                                  } else {
+                                    icon = "https://www.richardwilliams.co.uk/img/no-image.png";
+                                  }
+                              %>
+                                <a href="/invite?id=<%=server.id%>" style="width: 100%;">
+                                    <div class="col server">
+                                      <div class="server-img"> 
+                                          <img src="<%= icon %>" alt="<%= server.name %> Logo">
+                                        </div>
+                                        <div class="server-name">
+                                          <%= server.name %>
+                                        </div>
+                                    </div>
+                                  </a>
+        
+                              <% }) %>
+                          </div>
+                        </div>   
+                        
+                    </div>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include("parts/footer") %>
+    </div>
+
+
+    <%- include('parts/js') %>
+
+  </body>
+
+
+  <!-- <script>
+    $(document).ready(function () { 
+      setTimeout(function() {
+        $(".loader").remove()
+        $("#ChooseList").removeClass('hidden')
+      }, 1000)
+    })
+  </script> -->
+
+</html>

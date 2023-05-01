@@ -1,0 +1,360 @@
+/* Manage */
+
+.guild-img {
+  margin: 5px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+#wrap {
+    margin: 50px auto;
+}
+
+#header {
+  height: 50px;
+  border-bottom: 1px solid white;
+  margin-bottom: 25px;
+}
+#header h3 {
+  margin: 15px;
+}
+
+#paneOne {
+  border-left: 10px solid blue;
+  border-radius: 5px;
+  width: 95%;
+  height: auto;
+  float: left;
+  margin-left: 10px;
+  background-color: #3B3D43;
+  margin-bottom: 50px;
+}
+
+.left, .right {
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+.btn {
+  margin-top: 25px;
+}
+
+.minPane {
+    background-color: #3B3D43;
+    width: 225px;
+    height: 200px;
+    border: solid 2px #000;
+    border-radius: 5px;
+    margin: 12.5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.minPane:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.module-title {
+  margin-top: 25px;
+  font-size: 22px;
+}
+.module-desc {
+  margin-top: 2em;
+  font-size: 13px;
+}
+
+.actived {
+  border-top: 4px solid green;
+}
+.deactived {
+  border-top: 4px solid red;
+}
+
+
+#wideMinPane {
+    float: left;
+    background: #F00;
+    border: solid 1px #000;
+    height: 90px;
+    background: #ffffff;
+    width: 398px;
+}
+
+
+
+#afterMini {
+    height: 300px;
+    background: #F00;
+    clear: left;
+}
+
+.list {
+  border-radius: 5px;
+  border: none;
+  padding: 7.5px;
+  color: #000;
+  margin-bottom: 1em;
+  display:inline-block;
+}
+
+.open-menu {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.save {
+  display:inline-block;
+  margin: 0;
+  padding: 2px;
+  margin-top: -2.5px;
+}
+
+.add-role {
+  margin-top: -2.5px;
+  padding: 2px;
+}
+
+.ownerlist {
+  position: relative;
+  width: 600px;
+  margin-left: 60%;
+}
+
+.ownerlist h5 {
+  text-decoration: underline;
+}
+
+.ownerlist ul {
+  margin-left: -10px;
+}
+
+.ownerlist ul li input {
+  background-color: transparent;
+  border:none;
+}
+
+.ownerlist ul li button {
+  background-color: transparent;
+  margin-top: -7.5px;
+}
+
+.ownerlist ul li button span {
+  color: red;
+}
+
+
+
+/* Menu */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 6em 50px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 75%;
+  height: 80%; 
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  margin-top: 30px;
+}
+.popup .content ul {
+  margin-left: -20px;
+}
+.popup .content ul li, .popup .content ul input, .popup .content p {
+  color: #333;
+  max-height: 30%;
+  display:inline-block;
+  border: none;
+  outline:0;
+  width: 75%;
+}
+
+.popup .content ul button span, .popup .content ul button {
+  color: red;
+  margin-top: -7.5px;
+  display:inline-block;
+  background-color: transparent;
+}
+
+
+
+.cmd-box {
+  padding: 100px;
+  width: 25%;
+  height:125px;
+  border: 1.5px solid black;
+  background-color: #3B3D43;
+  margin: 10px;
+  display: inline-block;
+}
+
+.cmd-box .cmd-title {
+  margin-top: -85px;
+  width: 200%;
+  text-align: center;
+  margin-left: -45px;
+}
+
+.cmd-box .description {
+  width: 200%;
+  margin-top: 20px;
+  margin-left: -50px;
+  text-align: center;
+}
+
+.cmd-box .toggle {
+  margin-left:-90px;
+  margin-top:  27.5px;
+  text-align: center;
+}
+
+.cmd-box .setting {
+  padding: 0;
+  float: right;
+  margin-right: -85px;
+}
+
+@media (min-width: 768px) {
+  .minPane {
+    float: left;
+    margin: 10px;
+  }
+  .left {
+    width: 47.5%;
+    float: left;
+    margin-left: 30px;
+    margin-top: 17.5px;
+  }
+  
+  .right {
+    margin-top: 20px;
+    width: 42.5%;
+    float: right;
+  }
+  .right h5 {
+    width: 100%;
+    height: auto;
+  }
+  .right ul {
+    margin-left: 60px;
+    margin-top: 10px;
+  }
+  /* #delete-botm:checked ~ .delete-botm-popup {
+    display: block;
+  } */
+  #CheckBoxPopover {
+    -webkit-transition: all 1s ease;
+       -moz-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+         -o-transition: all 1s ease;
+            transition: all 1s ease;    
+  }
+
+  /* Popup */
+  .popup {
+    margin: 8em auto;
+    width: 60%;
+    height: 60%; 
+  }
+  .popup .content ul {
+    margin-left: 0;
+  }
+  .popup .content ul li, .popup .content ul input, .popup .content p {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #paneOne {
+    margin-left: 280px;
+    width: 60%
+  }
+  #header {
+    width: 60%;
+    margin-left: auto;
+  }
+  .modules {
+    width: 40em;
+    margin-left: 17.5em;
+  }
+  .delete-botm-popup {
+    display: none;
+    height: auto;
+    width: 300px;
+    padding: 10px;
+    background-color: #105e80;
+    border: 1px solid rgb(3, 80, 196);
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: .5s;
+    line-height: 10px;
+    font-size: 15px;
+  }
+  .delete-botm-popup>input {
+    width: 75px;
+  }
+  #delete-botm:checked ~ .delete-botm-popup {
+    display: block;
+    transition: 3s;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  #paneOne {
+    margin-left: 300px;
+    width: 40%
+  }
+  #header {
+    width: 60%;
+    margin-left: 300px;
+  }
+  .modules {
+    width: 75em;
+    margin-left: 20em;
+  }
+  .minPane {
+    float: left;
+  }
+}

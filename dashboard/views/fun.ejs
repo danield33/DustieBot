@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html>
+        <head>
+            <%- include("parts/head") %>
+            <title>Dustie - Dashboard</title>
+            <link rel="stylesheet" href="/switcher.css">
+            <link rel="stylesheet" href="/modal.css">
+        </head>
+
+
+
+  <body>
+
+      <%- include("parts/navbar") %>
+
+
+    <!-- Page it self -->
+
+    <div class="wrapper">
+        <%- include("parts/sidenav", {page:"fun"}) %>
+
+        <div id="content">
+            <div class="overlay">
+            
+        
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="far fa-laugh-squint"></i> Meme Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>Send a random meme.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.meme) {%>
+                                            <input id="meme" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="meme" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">meme-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="far fa-smile-wink"></i> Joke Command
+                                </div>
+                                <div class="card-body">
+  
+                                    <p>Send a random joke.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.joke) {%>
+                                            <input id="joke" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="joke" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">joke-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-cat"></i> Cat Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>Send a random cat image.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.cat) {%>
+                                            <input id="cat" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="cat" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">cat-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                  <i class="fas fa-dog"></i> Dog Command
+                                </div>
+                                <div class="card-body">
+  
+                                    <p>Send a random dog image.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.dog) {%>
+                                            <input id="dog" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="dog" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">dog-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-cat"></i> Catfact Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>Send a random catfact.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.catfact) {%>
+                                            <input id="catfact" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="catfact" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">catfact-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                  <i class="fas fa-dog"></i> Dogfact Command
+                                </div>
+                                <div class="card-body">
+  
+                                    <p>Send a random Dogfact.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.dogfact) {%>
+                                            <input id="dogfact" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="dogfact" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">dogfact-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                  <i class="fas fa-coins"></i> Flip Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>You choose... Heads or Tails?</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.flip) {%>
+                                            <input id="flip" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="flip" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">flip-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    👌 Gottem Command
+                                </div>
+                                <div class="card-body">
+  
+                                    <p>GOTTEM!</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.gottem) {%>
+                                            <input id="gottem" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="gottem" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">gottem-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    🎱 8ball Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>Ask whatever you want.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.eightball) {%>
+                                            <input id="eightball" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="eightball" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">eightball-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-dice"></i> Roll Command
+                                </div>
+                                <div class="card-body">
+  
+                                    <p>Roll a die!</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.roll) {%>
+                                            <input id="roll" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="roll" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">roll-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-images"></i> Image Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>Search an image.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.image) {%>
+                                            <input id="image" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="image" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">image-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-gamepad"></i> TicTacToe Command
+                                </div>
+                                <div class="card-body">
+
+                                    <p>Play TicTacToe.</p>
+                                        
+                                    <div class="toggle-component">
+                                        <label class="toggle">
+                                        <% if(cmds.tictactoe) {%>
+                                            <input id="tictactoe" type="checkbox" checked/>
+                                        <% } else { %>
+                                            <input id="tictactoe" type="checkbox"/>
+                                        <% } %>
+                                        <div data-off="Enable" data-on="Disable">tictactoe-cmd</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="save-msg error hidden">
+                <span></span>
+            </div>
+            <div class="save-msg success hidden">
+                <span></span>
+            </div>
+
+            <%-include("parts/footer") %>
+        </div>
+    </div>
+
+
+
+    <%- include("parts/js") %>
+    <script src="/fun.js"></script>
+
+
+  </body>
+
+</html>

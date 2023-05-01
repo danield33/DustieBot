@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+        <head>
+            <%- include("parts/head") %>
+            <title>Dustie - Dashboard</title>
+            <link rel="stylesheet" href="/switcher.css">
+            <link rel="stylesheet" href="/modal.css">
+        </head>
+
+
+
+  <body>
+
+      <%- include("parts/navbar") %>
+
+
+    <!-- Page it self -->
+
+    <div class="wrapper">
+        <%- include("parts/sidenav", {page:"welcome"}) %>
+
+        <div id="content">
+            <div class="overlay">
+            
+        
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card w-25">
+                                <div class="card-body">
+                                    <% if(module.welcome.format == 1 || module.welcome.format == 2) { %>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="typechoice" id="choice1" value="message" checked>
+                                            <label class="form-check-label" for="choice1">Message</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="typechoice" id="choice2" value="image">
+                                            <label class="form-check-label" for="choice2">Image</label>
+                                        </div>
+                                    <% } else { %>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="typechoice" id="choice1" value="message">
+                                            <label class="form-check-label" for="choice1">Message</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="typechoice" id="choice2" value="image" checked>
+                                            <label class="form-check-label" for="choice2">Image</label>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="w-100"></div>
+
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <i class="fas fa-door-open"></i> Welcome (Not functional yet!)
+                                </div>
+                                <div class="card-body">
+
+                                    <div id="msg" class="hidden-display">
+                                        <div id="msg-type-selector">
+                                            <% console.log(module.welcome.format) %>
+                                            <% if(module.welcome.format == 1 || module.welcome.format != 1 && module.welcome.format != 2) { %>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="msgchoice" id="choice11" value="text" checked>
+                                                    <label class="form-check-label" for="choice11">Text</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="msgchoice" id="choice12" value="embed">
+                                                    <label class="form-check-label" for="choice12">Embed</label>
+                                                </div>
+                                            <% } else if(module.welcome.format == 2) { %>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="msgchoice" id="choice11" value="text">
+                                                    <label class="form-check-label" for="choice11">Text</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="msgchoice" id="choice12" value="embed" checked>
+                                                    <label class="form-check-label" for="choice12">Embed</label>
+                                                </div>
+                                            <% } %>
+                                        </div>
+
+                                        <hr>
+    
+                                        <div>
+                                            <h5 class="bold-text">Welcome Channel</h5>
+                                            <% if(!module.welcome.channel) {channel = 'Select a channel'} else {channel = guild.channels.find(ch => ch.id == module.welcome.channel).name } %>
+                                            <div class="input-group mb-3 select"> 
+                                                <input class="list" list="channels" id="wchannel" name="wchannel" placeholder="<%= channel %>"/>
+                                                <datalist id="channels">
+                                                    <% guild.channels.forEach(channel => {
+                                                        if(channel.type == "text") { %>
+                                                            <option value="<%= channel.name %>"> 
+                                                        <% }
+                                                    }) %>
+                                                </datalist>
+                                            </div>
+                                        </div>
+    
+    
+                                        <div id="msg-text" class="hidden-display">
+                                            <div>
+                                                <h5 class="bold-text" style="display: inline-block;">Welcome Message</h5>
+                                                <textarea onchange="changeMsgText()" name="wmessage" id="wmessage" style="height: 125px;" placeholder="<%=module.welcome.formatLS[1].text %>"></textarea>
+                                            </div>
+                                        </div>
+    
+                                        <div id="msg-embed" class="hidden-display">
+                                            <h2>Embed Builder in development!</h2>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="image" class="hidden-display">
+                                        <h3>Image editor soon!</h3>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col">
+                            <div class="card w-50">
+                                <div class="card-header">
+                                    Variables
+                                </div>
+                                <div class="card-body">
+                                    <ol style="list-style-type:none;">
+                                        <li>
+                                            <code>{username}</code> : Replaces with the user's username
+                                        </li>
+                                        <li>
+                                            <code>{server}</code> : Replaces with your server's/guild's name
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+            <div class="save-msg error hidden">
+                <span></span>
+            </div>
+            <div class="save-msg success hidden">
+                <span></span>
+            </div>
+
+            <%-include("parts/footer") %>
+        </div>
+    </div>
+
+
+
+    <%- include("parts/js") %>
+    <script src="/welcome.js"></script>
+
+
+  </body>
+
+</html>
+ 
