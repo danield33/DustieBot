@@ -1,0 +1,79 @@
+{
+    "moderation": {
+
+    },
+    "fun": {
+        "descriptions": [
+            "Get a random meme",
+            "Get a random joke",
+            "Get a random cat image",
+            "Get a random dog image",
+            "Check a catfact",
+            "Check a dogfact",
+            "Is it Heads or Tails...?",
+            "Ask whatever you want",
+            "Roll the die!",
+            "Play TicTacTie"
+        ],
+        "emojis": [
+            "far fa-laugh-squint",
+            "far fa-smile-wink",
+            "fas fa-cat",
+            "fas fa-dog",
+            "fas fa-cat",
+            "fas fa-dog",
+            "fas fa-coins",
+            "fas fa-question",
+            "fas fa-dice",
+            "fas fa-gamepad"
+        ]
+    },
+    "voice": {
+        "descriptions": [
+            "Make the bot leave the voice channel",
+            "Check what's playing now",
+            "Pause the current song",
+            "View the queue",
+            "Play a song",
+            "Loop the current queue",
+            "Resume a paused song",
+            "Search a video",
+            "Skip the current song",
+            "Play a soung effect",
+            "Stop a song",
+            "Change the volume",
+            "Remove ..",
+            "Move a song in the queue",
+            "View the lyrics of a song",
+            "Seek to a specific time in the song",
+            "Queue somethig ...",
+            "Rewind ...",
+            "Forward ...",
+            "...",
+            "Remove all dupes..."
+        ],
+        "emojis": [
+            "fas fa-sign-out-alt",
+            "fas fa-music",
+            "fas fa-pause",
+            "",
+            "fas fa-youtube",
+            "fas fa-sync",
+            "fas fa-play",
+            "fas fa-search",
+            "fas fa-forward",
+            "fas fa-volume-up",
+            "fas fa-hand-paper",
+            "fas fa-volume-down",
+            "fas fa-trash",
+            "fas fa-exchange-alt",
+            "fas fa-microphone",
+            "",
+            "",
+            "fas fa-backward",
+            "fas fa-forward",
+            "",
+            "fas fa-copy"
+        ]
+    }
+}

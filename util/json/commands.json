@@ -1,0 +1,50 @@
+[
+    {
+        "module": "fun",
+        "name": "meme",
+        "description": "Get a random meme",
+        "emoji": "<i class='fas fa-laugh-squint'></i>"
+    },
+    {
+        "module": "fun",
+        "name": "ascii",
+        "description": "Write text in a cool way",
+        "emoji": ""
+    },
+    {
+        "module": "fun",
+        "name": "cat",
+        "description": "Get a cat image",
+        "emoji": ""
+    },
+    {
+        "module": "fun",
+        "name": "catfact",
+        "description": "Get a random fact about a cat",
+        "emoji": ""
+    },
+    {
+        "module": "fun",
+        "name": "chat",
+        "description": "Have a chat with the bot",
+        "emoji": ""
+    },
+    {
+        "module": "fun",
+        "name": "connect4",
+        "description": "Play connect4 with the bot",
+        "emoji": ""
+    },
+    {
+        "module": "fun",
+        "name": "Create a crab video",
+        "description": "",
+        "emoji": ""
+    },
+    {
+        "module": "voice",
+        "name": "play",
+        "description": "Start a song",
+        "emoji": "<i class='fas fa-play'></i>"
+    }
+]

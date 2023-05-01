@@ -1,0 +1,22 @@
+{
+    "modules":{
+        "moderation":{
+            "kick":{
+                "name": "kick",
+                "desc": "Ban the user mentioned with a reason set.",
+                "usage": "kick @user reason"
+            },
+            "ban": {
+                "name": "ban",
+                "desc": "Ban the user mentioned with a reason set.",
+                "usage": "ban @user reason"
+            },
+            "mute": {
+                "name": "mute",
+                "usage": "mute @user time/s/m/d"
+            
+
+            }
+        }
+    }
+}

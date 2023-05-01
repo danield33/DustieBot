@@ -1,0 +1,333 @@
+{
+"white": 
+[
+    {
+        "piece": "PIECE_CASTLE",
+        "row": 0,
+        "col": 0,
+        "inplay": true,
+        "src": "w_rook_1x",
+        "direction": ["verticle", "horizontle"],
+        "max": 8,
+        "special": null
+    },
+    {
+        "piece": "PIECE_KNIGHT",
+        "row": 0,
+        "col": 1,
+        "inplay": true,
+        "src": "w_knight_1x",
+        "direction": ["L"],
+        "max": 3,
+        "special": null
+    },
+    {
+        "piece": "PIECE_BISHOP",
+        "row": 0,
+        "col": 2,
+        "inplay": true,
+        "src":"w_bishop_1x",
+        "direction": ["diagonal"],
+        "max": 8,
+        "special": null
+    }, 
+    {
+        "piece": "PIECE_QUEEN",
+        "row": 0,
+        "col": 3,
+        "inplay": true,
+        "src":"w_queen_1x",
+        "direction": ["verticle", "horizontle", "diagonal"],
+        "max": 8,
+        "special": null
+    },
+    {
+        "piece": "PIECE_KING",
+        "row": 0,
+        "col": 4,
+        "inplay": true,
+        "src": "w_king_1x",
+        "direction": ["verticle", "horizontle", "diagonal"],
+        "max": 1,
+        "special": null
+    },  
+   
+    {
+        "piece": "PIECE_BISHOP",
+        "row": 0,
+        "col": 5,
+        "inplay": true,
+        "src": "w_bishop_1x",
+        "direction": ["diagonal"],
+        "max": 8,
+        "special": null
+
+    },
+    {
+        "piece": "PIECE_KNIGHT",
+        "row": 0,
+        "col": 6,
+        "inplay": true,
+        "src": "w_knight_1x",
+        "direction": ["L"],
+        "max": 3,
+        "special": null
+
+    },
+    {
+        "piece": "PIECE_CASTLE",
+        "row": 0,
+        "col": 7,
+        "inplay": true,
+        "src": "w_rook_1x",
+        "direction": ["verticle", "horizontle"],
+        "max": 8,
+        "special": null
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 0,
+        "inplay": true,
+        "src": "w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 1,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 2,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 3,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },  
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 4,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 5,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 6,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 1,
+        "col": 7,
+        "inplay": true,
+        "src":"w_pawn_1x",
+        "direction": ["forward"],
+        "max": 2,
+        "special": "diagonal"
+    }
+],
+"black": 
+[
+    {
+        "piece": "PIECE_CASTLE",
+        "row": 7,
+        "col": 0,
+        "inplay": true,
+        "src": "b_rook_1x",
+        "direction": ["verticle", "horizontle"],
+        "max": 8,
+        "special": null
+    },
+    {
+        "piece": "PIECE_KNIGHT",
+        "row": 7,
+        "col": 1,
+        "inplay": true,
+        "src":"b_knight_1x",
+        "direction": ["L"],
+        "max": 3,
+        "special": null
+    },
+    {
+        "piece": "PIECE_BISHOP",
+        "row": 7,
+        "col": 2,
+        "inplay": true,
+        "src":"b_bishop_1x",
+        "direction": ["diagonal"],
+        "max": 8,
+        "special": null
+    }, 
+    {
+        "piece": "PIECE_KING",
+        "row": 7,
+        "col": 3,
+        "inplay": true,
+        "src":"b_king_1x",
+        "direction": ["verticle", "horizontle", "diagonal"],
+        "max": 1,
+        "special": null
+    },  
+    {
+        "piece": "PIECE_QUEEN",
+        "row": 7,
+        "col": 4,
+        "inplay": true,
+        "src":"b_queen_1x",
+        "direction": ["verticle", "horizontle", "diagonal"],
+        "max": 8,
+        "special": null
+    },
+    
+   
+    {
+        "piece": "PIECE_BISHOP",
+        "row": 7,
+        "col": 5,
+        "inplay": true,
+        "src":"b_bishop_1x",
+        "direction": ["diagonal"],
+        "max": 8,
+        "special": null
+    },
+    {
+        "piece": "PIECE_KNIGHT",
+        "row": 7,
+        "col": 6,
+        "inplay": true,
+        "src":"b_knight_1x",
+        "direction": ["L"],
+        "max": 3,
+        "special": null
+    },
+    {
+        "piece": "PIECE_CASTLE",
+        "row": 7,
+        "col": 7,
+        "inplay": true,
+        "src":"b_rook_1x",
+        "direction": ["verticle", "horizontle"],
+        "max": 8,
+        "special": null
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 0,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 1,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 2,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 3,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },  
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 4,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 5,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 6,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    },
+    {
+        "piece": "PIECE_PAWN",
+        "row": 6,
+        "col": 7,
+        "inplay": true,
+        "src": "b_pawn_1x",
+        "direction": ["verticle"],
+        "max": 2,
+        "special": "diagonal"
+    }
+]   
+}
